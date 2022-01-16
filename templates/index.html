@@ -34,8 +34,7 @@
       <div class="row" id="mars-featured-image">
         <div class="col-md-8">
           <h2>Featured Mars Image</h2>
-          <img
-            src="{{mars.featured_image }}"
+          <img src="{{ mars.featured_image }}"
             class="img-responsive"
             alt="Responsive image"
           />
@@ -48,6 +47,24 @@
           </div>
         </div>
       </div>
+      <!-- Section for Mars Hemisphere Images and URLs -->
+      <div class="row" id="mars-hemispheres" style="margin-top:80px;">
+        <div class="page-header">
+          <h2 class="text-center">Mars Hemispheres</h2>
+          {% for hemisphere in mars.hemisphere %}
+          <div class="col-md-6">
+              <div class="thumbnail">
+              <img src="{{hemisphere.img_url}}"
+                  alt="...">
+              <div class="caption">
+                  <h3>{{hemisphere.title}}</h3>
+              </div>
+              </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <!-- End section -->
     </div>
   </body>
 </html>
